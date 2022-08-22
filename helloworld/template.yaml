@@ -1,0 +1,60 @@
+name: helloworld
+description: Template used to create one hello world Java scaffold with the goal to create a simple project to realize POC and tests using Java language
+types:
+  - app-template
+inputs:
+  - label: Project Name
+    type: text
+    name: project_name
+    default: Hello World
+  - label: Project Version
+    type: text
+    global: true
+    name: project_version
+    default: 1.0.0
+  - label: Package Name
+    type: text
+    global: true
+    name: package_name
+    default: br.com.jland
+  - label: Java Version
+    type: text
+    items:
+      - 1.8
+      - 11
+      - 17
+    default: 17
+    name: java_compatibility
+  - label: Compilation tool
+    type: text
+    items:
+      - Gradle
+      - Maven
+      - None
+    default: None
+    name: compilation_tool
+global-computed-inputs:
+    group_id: "{{package_name}}.{{project_name}}"
+
+hooks:
+  - type: render-templates
+    trigger: after-render
+    path: ./gradle
+    condition:
+      variable: compilation_tool
+      operator: ==
+      value: Gradle
+  - type: render-templates
+    trigger: after-render
+    path: ./maven
+    condition:
+      variable: compilation_tool
+      operator: ==
+      value: Maven
+  - type: render-templates
+    trigger: after-render
+    path: ./no_build_tool
+    condition:
+      variable: compilation_tool
+      operator: ==
+      value: None
