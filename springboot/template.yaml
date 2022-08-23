@@ -11,6 +11,10 @@ inputs:
     global: true
     name: project_version
     default: 1.0.0
+  - label: Project Description
+    type: text
+    name: project_description
+    default: An amazing Spring Boot Web App
   - label: Package Name
     type: text
     global: true
