@@ -6,9 +6,9 @@ category: Backend # Ref: https://docs.stackspot.com/latest/docs/creators-guide/y
 compatibility: # Put a list of technologies compatible with the stack
   - Java
 technologies:  # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#technologiess
-  - "Docker"
-  - "Java"
-  - "Springboot"
+  - Docker
+  - Java
+  - Springboot
 about: docs/about.md
 use-cases:
   - title: Use Case Title
