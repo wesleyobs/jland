@@ -1,14 +1,11 @@
 description: Technology stacks aimed to the java world
 name: jland
 display-name: jland
-picture: stack.png
+picture: "stack.png"
 category: Backend # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#category
 compatibility: # Put a list of technologies compatible with the stack
   - Java
-technologies: # Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#technologies 
-  - Docker 
-  - Java
-  - Springboot
+technologies: ["Docker", "Java", "Springboot"]# Ref: https://docs.stackspot.com/latest/docs/creators-guide/yaml/#technologies 
 about: docs/about.md
 use-cases:
   - title: Use Case Title
