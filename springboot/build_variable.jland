@@ -1,0 +1,1 @@
+{%set runtime_version = 1.8 if java_compatibility == 8 else java_compatibility %}
