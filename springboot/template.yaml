@@ -1,12 +1,11 @@
-name: helloworld
-description: Template used to create a hello world Java scaffold.
+name: springboot
+description: Provide a Spring Boot Web app with the most common practices of software development
 types:
   - app-template
 inputs:
   - label: Project Name
     type: text
     name: project_name
-    default: Hello World
   - label: Project Version
     type: text
     global: true
@@ -30,11 +29,11 @@ inputs:
     items:
       - Gradle
       - Maven
-      - None
     default: None
     name: compilation_tool
 global-computed-inputs:
-    group_id: "{{package_name}}.{{project_name}}"
+  group_id: "{{package_name}}.{{project_name}}"
+  full_package_name: "{{package_name}}.{{project_name}}"
 
 hooks:
   - type: render-templates
@@ -58,3 +57,4 @@ hooks:
       variable: compilation_tool
       operator: ==
       value: None
+
