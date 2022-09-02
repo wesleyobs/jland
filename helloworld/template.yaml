@@ -3,29 +3,28 @@ description: Template used to create a hello world Java scaffold.
 types:
   - app-template
 inputs:
-  - label: Project Name
+  - label: Nome do projeto
     type: text
     name: project_name
     default: Hello World
-  - label: Project Version
+  - label: Versão do projeto
     type: text
     global: true
     name: project_version
     default: 1.0.0
-  - label: Package Name
+  - label: Informe o nome do pacote
     type: text
     global: true
     name: package_name
-    default: br.com.jland
-  - label: Java Version
+    default: br.com.javastarter
+  - label: Escolha a versão do Java
     type: text
     items:
-      - 1.8
       - 11
       - 17
     default: 17
     name: java_compatibility
-  - label: Compilation tool
+  - label: Escolha a ferramenta de compililação
     type: text
     items:
       - Gradle
@@ -34,7 +33,8 @@ inputs:
     default: None
     name: compilation_tool
 global-computed-inputs:
-    group_id: "{{package_name}}.{{project_name}}"
+    group_id: "{{package_name}}"
+    full_package_name: "{{package_name}}.{{project_name}}"
 
 hooks:
   - type: render-templates

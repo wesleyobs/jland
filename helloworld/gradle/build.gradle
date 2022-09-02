@@ -1,10 +1,23 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group = '{{group_id}}'
 version = '{{project_version}}'
 sourceCompatibility = '{{java_compatibility}}'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = "${group}"
+            artifactId = "${rootProject.name}"
+            version = "${version}"
+
+            from components.java
+        }
+    }
+}
 
 repositories {
     mavenCentral()
